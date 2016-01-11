@@ -4,7 +4,12 @@
 
 <div class="row">
 	<% @products.each do |p| %>
-		<div class="col-md-4"> <%= p.title %> </div>
+		<div class="col-md-4"> 
+			<%= p.title %> <br/ >
+			<img src='<%= p.path_to_image %>'></img> <br/ >
+			<%= p.description %> <br/ >
+
+		</div>
 	<% end %>		
 </div>
 

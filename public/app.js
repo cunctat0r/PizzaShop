@@ -10,8 +10,11 @@ function get_total_items() {
 	var total = 0;
 	for(var i=0; i<localStorage.length; i++) {
  		var key = localStorage.key(i);
-    	var value = localStorage[key];
-    	total = total + value * 1;    	
+ 		if (key.indexOf('product_') == 0) {
+ 			var value = localStorage[key];
+    		total = total + value * 1;
+ 		}
+    	
 	}
 	return total;
 }

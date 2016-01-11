@@ -18,3 +18,16 @@ function get_total_items() {
 	}
 	return total;
 }
+
+function cart_get_orders() {
+	var orders = '';
+	for(var i=0; i<localStorage.length; i++) {
+ 		var key = localStorage.key(i);
+ 		if (key.indexOf('product_') == 0) {
+ 			var value = localStorage[key];
+    		orders = orders + key + '=' + value + ',';
+ 		}
+    	
+	}
+	return orders;	
+}

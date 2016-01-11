@@ -1,14 +1,3 @@
-function something () {
-	var x = window.localStorage.getItem('bbb');
-
-	x = x * 1 + 1;
-
-	window.localStorage.setItem('bbb', x);
-	
-
-	alert(x);	
-}
-
 function add_to_cart(id) {
 	var key = 'product_' + id;
 	var x = window.localStorage.getItem(key);
@@ -19,10 +8,10 @@ function add_to_cart(id) {
 
 function get_total_items() {
 	var total = 0;
-	for(var i=0, len=localStorage.length; i<len; i++) {
- 	   var key = localStorage.key(i);
+	for(var i=0; i<localStorage.length; i++) {
+ 		var key = localStorage.key(i);
     	var value = localStorage[key];
     	total = total + value * 1;    	
-}
+	}
 	return total;
 }

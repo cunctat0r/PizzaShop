@@ -49,5 +49,5 @@ post '/cart' do
 
 	
 	
-  erb "Pizza #{@orders_arr.inspect}"
+  erb :cart
 end

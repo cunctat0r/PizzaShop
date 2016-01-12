@@ -3,18 +3,28 @@
 		<tr>
 			<th> # </th>
 			<th> Name </th>
-			<th> Price </th>
 			<th> Number </th>			
+			<th> Price </th>			
 		</tr>
 	</thead>
 	<tbody>
+		<% total_price = 0 %>
 		<% @orders_arr.each do |order| %>
 			<tr>
 				<td><%= order[0].id %></td>				
 				<td><%= order[0].title %></td>
-				<td><%= order[0].price %></td>
 				<td><%= order[1]%></td>
+				<td><%= order[0].price %></td>
+				<% total_price += order[1].to_i * order[0].price %>
 			</tr>
 		<% end %>	
+
+		<tr>
+				<td></td>				
+				<td></td>
+				<td></td>				
+				<td>Total: <%= total_price %></td>				
+		</tr>
+
 	</tbody>
 </table>

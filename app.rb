@@ -18,7 +18,7 @@ get '/about' do
 	erb :about
 end
 
-def parse_order order_string
+def parse_orders order_string
 
 	s1 = order_string.split(',')	
 	arr = []
@@ -35,9 +35,19 @@ def parse_order order_string
 
 end
 
+before '/cart' do
+	@products = Product.all
+end
+
 post '/cart' do
 	orders = params[:orders]
-	orders_arr = parse_order orders	
+	@orders_arr = parse_orders orders	
+
+	@orders_arr.each do |item|
+		item[0] = @products.find(item[0])
+	end
+
 	
-  erb "Pizza #{orders_arr}"
+	
+  erb "Pizza #{@orders_arr.inspect}"
 end

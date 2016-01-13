@@ -42,3 +42,8 @@ function update_orders_button() {
 	var text = 'Cart(' + get_total_items() + ')';
 	$('#orders_button').val(text);
 }
+
+function cancel_order() {
+	//alert('aaa');
+	window.localStorage.clear();	
+}

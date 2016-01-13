@@ -47,8 +47,8 @@ before '/cart' do
 end
 
 post '/cart' do
-	orders = params[:orders]
-	@orders_arr = parse_orders orders	
+	@orders_input = params[:orders_input]
+	@orders_arr = parse_orders @orders_input
 
 	@orders_arr.each do |item|
 		item[0] = @products.find(item[0])

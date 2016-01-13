@@ -9,6 +9,10 @@ set :database, "sqlite3:pizzashop.db"
 class Product < ActiveRecord::Base
 end
 
+class Order < ActiveRecord::Base
+end
+
+
 get '/' do
 	@products = Product.all
 	erb :index
@@ -45,9 +49,10 @@ post '/cart' do
 
 	@orders_arr.each do |item|
 		item[0] = @products.find(item[0])
-	end
-
-	
-	
+	end		
   erb :cart
+end
+
+post '/place_order' do
+  "Hello World"
 end

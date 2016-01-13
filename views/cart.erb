@@ -29,7 +29,7 @@
 	</tbody>
 </table>
 <form action='/place_order' method="POST" role="form">
-  <input name="order[orders_input]" type="hidden">
+  <input name="order[orders_input]" type="hidden" value="<%= @orders_input %>" />
   <div class="form-group">
     <label>Your name</label>
     <input name="order[name]" type="text" class="form-control" placeholder="Your name" value="">
